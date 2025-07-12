@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fixed 3D Model</title>
+    <title>AR Model - Fixed Size (Android + iPhone)</title>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
       body {
@@ -17,13 +18,11 @@
         height: 100vh;
         font-family: Arial, sans-serif;
       }
-
       model-viewer {
-        width: 400px;
+        width: 100%;
+        max-width: 400px;
         height: 500px;
-        pointer-events: none; /* يمنع أي تفاعل بالمجسم */
       }
-
       .note {
         text-align: center;
         margin-top: 20px;
@@ -35,20 +34,16 @@
   </head>
   <body>
     <model-viewer 
-      src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
-      ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
-      alt="Astronaut AR Model"
-      ar
-      ar-modes="quick-look"
+      src="https://modelviewer.dev/shared-assets/models/RobotExpressive.glb"
+      ios-src="https://modelviewer.dev/shared-assets/models/RobotExpressive.usdz"
+      alt="Robot AR Model"
+      ar 
+      ar-modes="webxr scene-viewer quick-look"
+      auto-rotate 
       camera-controls
       disable-zoom
-      auto-rotate="false"
-      camera-orbit="0deg 75deg 2.5m"
-      min-camera-orbit="0deg 75deg 2.5m"
-      max-camera-orbit="0deg 75deg 2.5m"
-      field-of-view="25"
-      exposure="1.0">
-      
+      scale="0.10 0.05 0.10"
+      ar-scale="fixed">
       <button slot="ar-button" style="
         background: #007bff;
         color: white;
@@ -61,12 +56,13 @@
         left: 50%;
         transform: translateX(-50%);
         cursor: pointer;">
-        View in AR (iPhone)
+        View in AR
       </button>
     </model-viewer>
 
     <div class="note">
-      Open this page using <strong>Safari on iPhone</strong> to view the model in your real space.
+      Open this page from <strong>Safari on iPhone</strong> or <strong>Chrome on Android</strong> to view the AR model.<br>
+      The model size is fixed (10cm × 5cm) and cannot be resized.
     </div>
   </body>
 </html>
