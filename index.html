@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fixed‑Size AR Model</title>
+    <title>Fixed 3D Model</title>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
     <style>
       body {
@@ -17,11 +17,13 @@
         height: 100vh;
         font-family: Arial, sans-serif;
       }
+
       model-viewer {
-        width: 100%;
-        max-width: 400px;
+        width: 400px;
         height: 500px;
+        pointer-events: none; /* يمنع أي تفاعل بالمجسم */
       }
+
       .note {
         text-align: center;
         margin-top: 20px;
@@ -32,17 +34,21 @@
     </style>
   </head>
   <body>
-    <model-viewer
-      src="https://modelviewer.dev/shared-assets/models/RobotExpressive.usdz"
-      ios-src="https://modelviewer.dev/shared-assets/models/RobotExpressive.usdz"
-      alt="Expressive Robot AR Model"
+    <model-viewer 
+      src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
+      ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz"
+      alt="Astronaut AR Model"
       ar
       ar-modes="quick-look"
-      auto-rotate
       camera-controls
       disable-zoom
-      scale="0.10 0.05 0.10"
-      ar-scale="fixed">
+      auto-rotate="false"
+      camera-orbit="0deg 75deg 2.5m"
+      min-camera-orbit="0deg 75deg 2.5m"
+      max-camera-orbit="0deg 75deg 2.5m"
+      field-of-view="25"
+      exposure="1.0">
+      
       <button slot="ar-button" style="
         background: #007bff;
         color: white;
@@ -60,8 +66,7 @@
     </model-viewer>
 
     <div class="note">
-      افتح هذه الصفحة من Safari على الآيفون لتشغيل الكاميرا وعرض المجسم.<br>
-      المجسم الآن شكل “روبوت تعبيري” حجمه ثابت 10×5 سم، ولا يمكن تكبيره أو تصغيره.
+      Open this page using <strong>Safari on iPhone</strong> to view the model in your real space.
     </div>
   </body>
 </html>
