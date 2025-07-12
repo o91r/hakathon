@@ -1,23 +1,62 @@
-<model-viewer 
-  src="https://example.com/models/chair.usdz"
-  ios-src="https://example.com/models/chair.usdz"
-  alt="Chair AR Model for iPhone"
-  ar 
-  ar-modes="quick-look"
-  auto-rotate 
-  camera-controls>
-  <button slot="ar-button" style="
-    background: #007bff;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 12px 20px;
-    font-size: 1rem;
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;">
-    View in AR (iPhone)
-  </button>
-</model-viewer>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AR Chair Model for iPhone</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fafafa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+      model-viewer {
+        width: 100%;
+        max-width: 400px;
+        height: 500px;
+      }
+      .note {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+        font-size: 0.95rem;
+        padding: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <model-viewer 
+      src="https://www.turbosquid.com/3d-models/chair-usdz/1468331" 
+      ios-src="https://www.turbosquid.com/3d-models/chair-usdz/1468331" 
+      alt="Chair AR Model for iPhone" 
+      ar 
+      ar-modes="quick-look" 
+      auto-rotate 
+      camera-controls>
+      <button slot="ar-button" style="
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;">
+        View in AR (iPhone)
+      </button>
+    </model-viewer>
+    <div class="note">
+      افتح الصفحة باستخدام <strong>Safari على iPhone</strong> لعرض الكرسي في الواقع المعزز.
+    </div>
+  </body>
+</html>
