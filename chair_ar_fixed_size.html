@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AR Chair - Fixed Size (Android + iPhone)</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fafafa;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+      model-viewer {
+        width: 100%;
+        max-width: 400px;
+        height: 500px;
+      }
+      .note {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+        font-size: 0.95rem;
+        padding: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <model-viewer 
+      src="https://modelviewer.dev/shared-assets/models/Chair.glb"
+      ios-src="https://modelviewer.dev/shared-assets/models/Chair.usdz"
+      alt="AR Chair Model"
+      ar 
+      ar-modes="webxr scene-viewer quick-look"
+      auto-rotate 
+      camera-controls
+      disable-zoom
+      scale="0.10 0.05 0.10"
+      ar-scale="fixed">
+      <button slot="ar-button" style="
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 20px;
+        font-size: 1rem;
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;">
+        View in AR
+      </button>
+    </model-viewer>
+
+    <div class="note">
+      افتح هذا الرابط من <strong>Safari (iPhone)</strong> أو <strong>Chrome (Android)</strong> وشغّل الواقع المعزز.<br>
+      النموذج: كرسي بالحجم الثابت 10×5 سم.
+    </div>
+  </body>
+</html>
